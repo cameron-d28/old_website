@@ -17,6 +17,13 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "yarn deploy:cleanup && yarn deploy:copy && yarn deploy:commit && yarn deploy:push && yarn deploy:cleanup-develop",
+    "deploy:cleanup": "git checkout main && rm -rf *.html *.css *.js *.svg *.png *.ico",
+    "deploy:copy": "mv build/* .",
+    "deploy:commit": "git add . && git commit -m 'Deploy updates'",
+    "deploy:push": "git push origin main",
+    "deploy:cleanup-develop": "rm -rf build && git checkout develop",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
