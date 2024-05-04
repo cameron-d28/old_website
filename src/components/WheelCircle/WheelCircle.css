@@ -24,6 +24,7 @@
   border-radius: 50%;
 }
 
+/* next make it smooth when you stop hovering in the middle of animation */
 .floater {
   position: absolute;
   width: 100px;
@@ -35,7 +36,7 @@
   animation: activate 2s forwards, vibrate 1s 2s infinite;
 }
 
-.wheel-circle:not(:hover) + .floater {
+.deactivate {
   animation: deactivate 2s forwards;
 }
 
