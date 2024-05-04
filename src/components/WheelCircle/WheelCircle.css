@@ -1,0 +1,88 @@
+.wheel-body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+
+.wheel-circle {
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.inner-circle {
+  position: absolute;
+  height: 80%;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid palegoldenrod;
+  border-radius: 50%;
+}
+
+.floater {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff0000;
+}
+
+.wheel-circle:hover + .floater {
+  animation: activate 2s forwards, vibrate 1s 2s infinite;
+}
+
+.wheel-circle:not(:hover) + .floater {
+  animation: deactivate 2s forwards;
+}
+
+@keyframes circle_around {
+  0% {
+    rotate: 0deg;
+    transform: translate(calc(40cqh));
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+    transform: translate(calc(40cqh));
+    rotate: 360deg;
+  }
+}
+
+@keyframes activate {
+  to {
+    transform: translate(40cqh);
+  }
+}
+
+@keyframes deactivate {
+  from {
+    transform: translate(40cqh);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+/* $randomNumber: random(5); */
+
+@keyframes vibrate {
+  0% {
+    transform: translate(40cqh);
+  }
+  25% {
+    transform: translate(calc(40cqh - 5px), -5px);
+  }
+  50% {
+    transform: translate(40cqh, 5px);
+  }
+  75% {
+    transform: translate(calc(40cqh + 5px), -5px);
+  }
+  100% {
+    transform: translate(40cqh);
+  }
+}
