@@ -2,19 +2,7 @@ import React from "react";
 import "./WheelCircle.css";
 
 const WheelCircle = () => {
-  const floaters = 3;
-  const wheelCircle = document.querySelector(".wheel-circle");
-  const floater = document.querySelector(".floater");
-
-  if (wheelCircle && floater) {
-    wheelCircle.addEventListener("mouseleave", function () {
-      floater.classList.add("deactivate");
-    });
-
-    wheelCircle.addEventListener("mouseenter", function () {
-      floater.classList.remove("deactivate");
-    });
-  }
+  // const floaters = 3;
 
   return (
     <div className="wheel-body">

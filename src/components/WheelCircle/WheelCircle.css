@@ -30,45 +30,24 @@
   width: 100px;
   height: 100px;
   background-color: #ff0000;
+  transition: transform 1s ease-out;
 }
 
 .wheel-circle:hover + .floater {
-  animation: activate 2s forwards, vibrate 1s 2s infinite;
-}
-
-.deactivate {
-  animation: deactivate 2s forwards;
-}
-
-@keyframes circle_around {
-  0% {
-    rotate: 0deg;
-    transform: translate(calc(40cqh));
-    rotate: 0deg;
-  }
-  100% {
-    rotate: 360deg;
-    transform: translate(calc(40cqh));
-    rotate: 360deg;
-  }
-}
-
-@keyframes activate {
-  to {
-    transform: translate(40cqh);
-  }
+  transform: translate(40cqh);
+  transition-duration: 3s;
+  /* transform: vibrate(1s 2s infinite); */
+  /* vibrate 1s 2s infinite; */
 }
 
 @keyframes deactivate {
-  from {
+  /* from {
     transform: translate(40cqh);
-  }
+  } */
   to {
     transform: translate(0);
   }
 }
-
-/* $randomNumber: random(5); */
 
 @keyframes vibrate {
   0% {
@@ -85,5 +64,20 @@
   }
   100% {
     transform: translate(40cqh);
+  }
+}
+
+/* $randomNumber: random(5); */
+
+@keyframes circle_around {
+  0% {
+    rotate: 0deg;
+    transform: translate(calc(40cqh));
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+    transform: translate(calc(40cqh));
+    rotate: 360deg;
   }
 }
