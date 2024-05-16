@@ -33,12 +33,45 @@
   transition: transform 1s ease-out;
 }
 
+.floater.animate {
+  transform: translate(calc(50% - 50px), calc(50% - 50px)) rotate(var(--rotate))
+    translateY(-40cqh);
+  transition-duration: 3s;
+}
+
+/* next add one that goes striaaght out
+
+.floater.animate0straight {
+  transform: translate(var(--translate-x), var(--translate-y));
+  transition-duration: 3s;
+}
+
+            style={{
+              "--translate-x": `${translateX}px`,
+              "--translate-y": `${translateY}px`,
+            }}
+
+
+            let distance = 40; // Distance from the center of the circle
+        let translateX = Math.cos(angle) * distance;
+        let translateY = Math.sin(angle) * distance;
+        
+*/
+/* 
+.floater.animate {
+  transform: translate(40cqh) rotate(var(--rotate));
+  transition-duration: 3s;
+}
+ */
+
+/* animation: circle_around 3s infinite; */
+
+/* 
 .wheel-circle:hover + .floater {
   transform: translate(40cqh);
   transition-duration: 3s;
   /* transform: vibrate(1s 2s infinite); */
-  /* vibrate 1s 2s infinite; */
-}
+/* vibrate 1s 2s infinite; */
 
 @keyframes deactivate {
   /* from {
