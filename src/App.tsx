@@ -2,6 +2,7 @@ import React from "react";
 import pfp from "./content/pfp.jpeg";
 import "./App.css";
 import WheelCircle from "./components/WheelCircle";
+import { HoverTypes } from "./components/WheelCircle/types";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <p>carpe diem</p>
       </header>
       <div className="app-body">
-        <WheelCircle />
+        <WheelCircle hovertype={HoverTypes.straight} />
       </div>
     </div>
   );

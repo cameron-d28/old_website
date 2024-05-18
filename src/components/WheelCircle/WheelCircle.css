@@ -11,9 +11,10 @@
 .wheel-circle {
   width: 10rem;
   height: 10rem;
-  background-color: red;
+  background-color: orange;
   border-radius: 50%;
   z-index: 10;
+  opacity: 0.9;
 }
 
 .inner-circle {
@@ -29,13 +30,20 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  background-color: #ff0000;
+  background-color: blue;
   transition: transform 1s ease-out;
+  z-index: 5;
 }
 
-.floater.animate {
+.floater.animate-spiral {
   transform: translate(calc(50% - 50px), calc(50% - 50px)) rotate(var(--rotate))
     translateY(-40cqh);
+  transition-duration: 3s;
+}
+
+.floater.animate-straight {
+  transform: translate(calc(50% - 50px), calc(50% - 50px))
+    translateX(var(--translate-x)) translateY(var(--translate-y));
   transition-duration: 3s;
 }
 

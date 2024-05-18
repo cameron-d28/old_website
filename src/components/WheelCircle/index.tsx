@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./WheelCircle.css";
+import { HoverTypes } from "./types";
+import { getStyling } from "./funcs";
 
-const WheelCircle = () => {
+interface HoverProps {
+  hovertype: HoverTypes;
+}
+
+const WheelCircle = ({ hovertype }: HoverProps) => {
   const floaters = 3;
 
   // create a variable that tracks if the floater is being hovered over
@@ -21,14 +27,20 @@ const WheelCircle = () => {
         onMouseLeave={handleHover}
       />
       {Array.from({ length: floaters }).map((_, i) => {
-        let ratio = i / floaters;
-        let angle = ratio * 360;
+        // funtion to call for styling that returns the correct string to put in style
+        const styling = getStyling(hovertype, i, floaters);
+
+        const onClick = () => {
+          console.log("clicked a link");
+        };
+
         return (
           // Apply 'animate' class when hover is true
           <div
             key={i}
-            className={`floater ${hover ? "animate" : ""}`}
-            style={{ "--rotate": `${angle}deg` } as React.CSSProperties}
+            className={`floater ${hover ? hovertype : ""}`}
+            style={styling as React.CSSProperties}
+            onClick={onClick}
           >
             <p>test</p>
           </div>
