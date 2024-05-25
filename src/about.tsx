@@ -2,15 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import App from "./App";
+import About from "./pages/about";
 
-const rootElement = document.getElementById("root") as HTMLElement;
+const aboutElement = document.getElementById("about-root") as HTMLElement;
 
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
+if (aboutElement) {
+  const about = ReactDOM.createRoot(aboutElement);
+  about.render(
     <React.StrictMode>
-      <App />
+      <About />
     </React.StrictMode>
   );
 }

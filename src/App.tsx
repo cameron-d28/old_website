@@ -1,9 +1,6 @@
 import React from "react";
 import "./App.css";
 import Home from "./pages/home";
-import About from "./pages/about";
-import Resume from "./pages/resume";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // function App() {
 //   const path = window.location.pathname;
@@ -18,16 +15,20 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //   }
 // }
 
+// function App() {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/about" element={<About />} />
+//         <Route path="/resume" element={<Resume />} />
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
-  );
+  return <Home />;
 }
 
 export default App;
