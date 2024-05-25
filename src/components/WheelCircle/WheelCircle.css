@@ -38,13 +38,13 @@
 .floater.animate-spiral {
   transform: translate(calc(50% - 50px), calc(50% - 50px)) rotate(var(--rotate))
     translateY(-40cqh);
-  transition-duration: 3s;
+  transition-duration: 1s;
 }
 
 .floater.animate-straight {
   transform: translate(calc(50% - 50px), calc(50% - 50px))
     translateX(var(--translate-x)) translateY(var(--translate-y));
-  transition-duration: 3s;
+  transition-duration: 1s;
 }
 
 /* next add one that goes striaaght out

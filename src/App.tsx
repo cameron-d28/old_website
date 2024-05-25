@@ -1,22 +1,20 @@
 import React from "react";
-import pfp from "./content/pfp.jpeg";
 import "./App.css";
-import WheelCircle from "./components/WheelCircle";
-import { HoverTypes } from "./components/WheelCircle/types";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Resume from "./pages/resume";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="app-header">
-        <img src={pfp} className="personal-pfp" alt="Profile Pic" />
-        <p>cameron davis</p>
-        <p>carpe diem</p>
-      </header>
-      <div className="app-body">
-        <WheelCircle hovertype={HoverTypes.straight} />
-      </div>
-    </div>
-  );
+  const path = window.location.pathname;
+
+  switch (path) {
+    case "/about":
+      return <About />;
+    case "/resume":
+      return <Resume />;
+    default:
+      return <Home />;
+  }
 }
 
 export default App;

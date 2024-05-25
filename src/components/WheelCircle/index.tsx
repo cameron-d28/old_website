@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./WheelCircle.css";
-import { HoverTypes } from "./types";
+import { HoverTypes, LinkProps } from "./types";
 import { getStyling } from "./funcs";
 
 interface HoverProps {
   hovertype: HoverTypes;
+  links: LinkProps[];
 }
 
-const WheelCircle = ({ hovertype }: HoverProps) => {
-  const floaters = 3;
+const WheelCircle = ({ hovertype, links }: HoverProps) => {
+  const floaters = links.length;
 
   // create a variable that tracks if the floater is being hovered over
   const [hover, setHover] = useState(false);
@@ -19,19 +20,20 @@ const WheelCircle = ({ hovertype }: HoverProps) => {
 
   return (
     // body for the floating elements to work within
-    <div className="wheel-body">
+    <div
+      className="wheel-body"
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+    >
       {/* element that triggers animations on float */}
-      <div
-        className="wheel-circle"
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHover}
-      />
-      {Array.from({ length: floaters }).map((_, i) => {
-        // funtion to call for styling that returns the correct string to put in style
+      <div className="wheel-circle" />
+      {links.map((link, i) => {
+        // function to call for styling that returns the correct string to put in style
         const styling = getStyling(hovertype, i, floaters);
 
         const onClick = () => {
-          console.log("clicked a link");
+          handleHover();
+          window.location.href = link.link;
         };
 
         return (
@@ -42,12 +44,12 @@ const WheelCircle = ({ hovertype }: HoverProps) => {
             style={styling as React.CSSProperties}
             onClick={onClick}
           >
-            <p>test</p>
+            <p>{link.title}</p>
           </div>
         );
       })}
       {/* <div className="floater" /> */}
-      {/* visual representationof the circle */}
+      {/* visual representation of the circle */}
       <div className="inner-circle" />
     </div>
   );
