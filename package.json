@@ -77,7 +77,6 @@
       "react-app",
       "react-app/jest"
     ],
-    "parser": "jsx",
     "parserOptions": {
       "babelOptions": {
         "presets": [
