@@ -50,19 +50,28 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+const pages = {
+  homeHtml: resolveApp("public/index.html"),
+  homeJs: resolveModule(resolveApp, "src/index"),
+  aboutHtml: resolveApp("public/about.html"),
+  aboutJs: resolveModule(resolveApp, "src/pages/about"),
+  resumeHtml: resolveApp("public/resume.html"),
+  resumeJs: resolveModule(resolveApp, "src/pages/resume"),
+};
+
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp(".env"),
   appPath: resolveApp("."),
   appBuild: resolveApp(buildPath),
   appPublic: resolveApp("public"),
-  appHtml: resolveApp("public/index.html"),
-  // added
-  appAboutHtml: resolveApp("public/about.html"),
-  appIndexJs: resolveModule(resolveApp, "src/index"),
-  // added
-  appAboutJs: resolveModule(resolveApp, "src/about"),
-
+  // appHtml: resolveApp("public/index.html"),
+  // // added
+  // appAboutHtml: resolveApp("public/about.html"),
+  // appIndexJs: resolveModule(resolveApp, "src/index"),
+  // // added
+  // appAboutJs: resolveModule(resolveApp, "src/about"),
+  pages: pages,
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
   appTsConfig: resolveApp("tsconfig.json"),

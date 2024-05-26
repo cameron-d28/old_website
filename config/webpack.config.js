@@ -200,7 +200,11 @@ module.exports = function (webpackEnv) {
       : isEnvDevelopment && "cheap-module-source-map",
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
-    entry: { main: paths.appIndexJs, about: paths.appAboutJs },
+    entry: {
+      main: paths.pages.homeJs,
+      about: paths.pages.aboutJs,
+      resume: paths.pages.resumeJs,
+    },
     // {
     //   main: paths.appIndexJs,
     //   about: paths.appAboutJs,
@@ -574,7 +578,7 @@ module.exports = function (webpackEnv) {
           {},
           {
             inject: true,
-            template: paths.appHtml,
+            template: paths.pages.homeHtml,
             filename: "index.html",
             chunks: ["main"],
           },
@@ -602,9 +606,37 @@ module.exports = function (webpackEnv) {
           {},
           {
             inject: true,
-            template: paths.appAboutHtml,
+            template: paths.pages.aboutHtml,
             filename: "about.html",
             chunks: ["about"],
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: paths.pages.resumeHtml,
+            filename: "resume.html",
+            chunks: ["resume"],
           },
           isEnvProduction
             ? {
