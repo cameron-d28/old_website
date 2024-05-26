@@ -18,12 +18,20 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
     setHover(!hover);
   };
 
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
+
   return (
     // body for the floating elements to work within
     <div
       className="wheel-body"
-      onMouseEnter={handleHover}
-      onMouseLeave={handleHover}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* element that triggers animations on float */}
       <div className="wheel-circle" />
