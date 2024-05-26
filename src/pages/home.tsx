@@ -17,7 +17,9 @@ const Home = () => {
         <p>cameron davis</p>
         <p>carpe diem</p>
       </header>
-      <div className="app-body">
+      <div className="navigation-body">
+        <WheelCircle hovertype={HoverTypes.straight} links={links} />
+        <WheelCircle hovertype={HoverTypes.straight} links={links} />
         <WheelCircle hovertype={HoverTypes.straight} links={links} />
       </div>
     </div>
