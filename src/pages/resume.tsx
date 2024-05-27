@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../reportWebVitals";
 import Resume from "../components/resume";
+import "../App.css";
 
 const aboutElement = document.getElementById("resume-root") as HTMLElement;
 

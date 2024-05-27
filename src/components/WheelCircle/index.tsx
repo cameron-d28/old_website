@@ -29,7 +29,7 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
   return (
     // body for the floating elements to work within
     <div
-      className="wheel-body"
+      className="wheel-body "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -56,9 +56,8 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
           </div>
         );
       })}
-      {/* <div className="floater" /> */}
       {/* visual representation of the circle */}
-      <div className="inner-circle" />
+      {/* <div className="inner-circle" /> */}
     </div>
   );
 };

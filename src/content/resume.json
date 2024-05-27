@@ -1,0 +1,52 @@
+{
+  "experiences": [
+    {
+      "title": "Software Engineer",
+      "company": "shades media",
+      "description": "developed a new in-app game using react, typescript, tailwind css, and firebase",
+      "skills": ["sanity", "typescript", "react", "tailwindcss", "firebase"],
+      "date": "Summer 2023"
+    },
+    {
+      "title": "Co-President",
+      "company": "Diversatech",
+      "description": "run a 30+ person club to help diversify the tech industry",
+      "skills": ["backend", "frontend", "design"],
+      "date": "Since 2022"
+    },
+    {
+      "title": "Equity Analyst",
+      "company": "AltraVue",
+      "description": "researched and presented an industry report on the Industrial Revolution 4.0 and photonics",
+      "skills": ["excel", "bloomberg", "word"],
+      "date": "2021 - 2023"
+    },
+    {
+      "title": "Rotational Analyst",
+      "company": "Cascade Investments",
+      "description": "public & privates, real estate, & operations",
+      "skills": ["excel", "bloomberg", "word", "powerBI"],
+      "date": "Summer 2020 & 2021"
+    }
+  ],
+  "education": [
+    {
+      "title": "B.A. in Finance",
+      "institution": "Lakeside School",
+      "date": "2016 - 2020"
+    },
+    {
+      "title": "B.S.E in Entrepreneurship & Innovation | B.S.E in Data Analytics & Artificial Intelligence",
+      "institution": "University of Pennsylvania | M&T Program",
+      "date": "2021 - 2026"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Crypto Dashboard",
+      "description": "A dashboard to track crypto currencies",
+      "skills": ["react", "typescript", "tailwindcss", "firebase"],
+      "date": "Summer 2023"
+    }
+  ]
+}

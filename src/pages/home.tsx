@@ -19,6 +19,7 @@ const Home = () => {
     { link: "/", title: "coming soon" },
     { link: "/", title: "coming soon" },
     { link: "/", title: "coming soon" },
+    { link: "/", title: "coming soon" },
   ];
 
   return (

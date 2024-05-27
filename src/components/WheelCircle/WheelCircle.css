@@ -9,8 +9,8 @@
 }
 
 .wheel-circle {
-  width: 10rem;
-  height: 10rem;
+  width: 25%;
+  height: 25%;
   background-color: orange;
   border-radius: 50%;
   z-index: 10;
