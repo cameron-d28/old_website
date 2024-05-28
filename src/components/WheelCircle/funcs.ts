@@ -6,6 +6,7 @@ function getStyling(hovertype: HoverTypes, i: number, total_floaters: number) {
   let rad = ratio * 6.283;
   let angle = ratio * 360;
 
+  // determine the animation movement based on the hovertype
   switch (hovertype) {
     case HoverTypes.none:
       return "";
