@@ -5,6 +5,6 @@ export enum HoverTypes {
 }
 
 export type LinkProps = {
-  link: string;
-  title: string;
+  label: string;
+  href: string;
 };

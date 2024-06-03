@@ -6,9 +6,14 @@ import { getStyling } from "./funcs";
 interface HoverProps {
   hovertype: HoverTypes;
   links: LinkProps[];
+  location?: {
+    x: number;
+    y: number;
+  };
+  style?: React.CSSProperties; // Added style prop
 }
 
-const WheelCircle = ({ hovertype, links }: HoverProps) => {
+const WheelCircle = ({ hovertype, links, location, style }: HoverProps) => {
   const floaters = links.length;
 
   // create a variable that tracks if the floater is being hovered over
@@ -29,7 +34,14 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
   return (
     // body for the floating elements to work within
     <div
-      className="wheel-body "
+      className="wheel-body"
+      style={{
+        position: "absolute",
+        // left: location?.x,
+        // top: location?.y,
+        // transform: "translate(-50%, -50%)",
+        ...style,
+      }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -41,7 +53,7 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
 
         const onClick = () => {
           handleHover();
-          window.location.href = link.link;
+          window.location.href = link.href;
         };
 
         return (
@@ -52,7 +64,7 @@ const WheelCircle = ({ hovertype, links }: HoverProps) => {
             style={styling as React.CSSProperties}
             onClick={onClick}
           >
-            <p>{link.title}</p>
+            <p>{link.label}</p>
           </div>
         );
       })}
